@@ -1,0 +1,17 @@
+<h2>{{question.text}}</h2>
+
+{% if correct %}
+
+<h3 style="color:green;">To‘g‘ri javob ✅</h3>
+
+{% else %}
+
+<h3 style="color:red;">Xato javob ❌</h3>
+
+<p>{{question.explanation}}</p>
+
+<a href="{{question.link}}" target="_blank">
+Batafsil o‘qish
+</a>
+
+{% endif %}

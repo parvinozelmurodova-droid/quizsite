@@ -1,0 +1,23 @@
+<h2>Axborot texnologiyalari testi</h2>
+
+{% for q in questions %}
+
+<form method="post">
+{% csrf_token %}
+
+<p>{{q.text}}</p>
+
+<input type="radio" name="answer" value="{{q.option1}}"> {{q.option1}} <br>
+<input type="radio" name="answer" value="{{q.option2}}"> {{q.option2}} <br>
+<input type="radio" name="answer" value="{{q.option3}}"> {{q.option3}} <br>
+<input type="radio" name="answer" value="{{q.option4}}"> {{q.option4}} <br>
+
+<input type="hidden" name="question_id" value="{{q.id}}">
+
+<button type="submit">Javob berish</button>
+
+</form>
+
+<hr>
+
+{% endfor %}
