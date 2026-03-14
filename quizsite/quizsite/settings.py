@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-7bg7csydz1bvk^fmgsz01p^x@)(5c_#y@5!hecjbu3_^1zf3^e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -49,6 +49,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
+
 ]
 
 ROOT_URLCONF = 'quizsite.urls'
@@ -117,3 +121,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = (BASE_DIR, 'staticfiles')
