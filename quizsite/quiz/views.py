@@ -7,7 +7,7 @@ def quiz_view(request):
     questions = Question.objects.all()
 
     if request.method == "POST":
-
+        
         user_answer = request.POST.get("answer")
         question_id = request.POST.get("question_id")
 
@@ -20,5 +20,6 @@ def quiz_view(request):
             "user_answer":user_answer,
             "correct":correct
         })
-
+        
+        
     return render(request,"quiz.html",{"questions":questions})
